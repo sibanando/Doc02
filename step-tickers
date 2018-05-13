@@ -1,0 +1,3 @@
+# List of NTP servers used by the ntpdate service.
+
+172.23.224.100

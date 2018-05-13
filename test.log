@@ -1,0 +1,95 @@
+----172.23.226.70----
+Filesystem                  Type      Size  Used Avail Use% Mounted on
+/dev/mapper/vg00-rootvol    xfs       5.4G  2.5G  3.0G  45% /
+devtmpfs                    devtmpfs   34G     0   34G   0% /dev
+tmpfs                       tmpfs      34G     0   34G   0% /dev/shm
+tmpfs                       tmpfs      34G  102M   34G   1% /run
+tmpfs                       tmpfs      34G     0   34G   0% /sys/fs/cgroup
+/dev/sda2                   xfs       1.1G  164M  900M  16% /boot
+/dev/mapper/vgfinwork-lvol0 ext4      254G   13G  229G   6% /finwork
+/dev/mapper/datavg-oracle   ext4       11G  2.5G  7.1G  26% /oracle
+/dev/mapper/vg00-homevol    xfs       8.6G  873M  7.8G  11% /home
+/dev/mapper/vg00-varvol     xfs        20G  1.7G   18G   9% /var
+/dev/mapper/vgfinap-lvol0   ext4      254G   15G  226G   7% /finapp
+/dev/mapper/vg00-auditvol   xfs        11G   90M   11G   1% /var/log/audit
+/dev/mapper/vg00-tmpvol     xfs       8.6G   84M  8.6G   1% /tmp
+tmpfs                       tmpfs     6.8G     0  6.8G   0% /run/user/6006
+tmpfs                       tmpfs     6.8G     0  6.8G   0% /run/user/6007
+tmpfs                       tmpfs     6.8G     0  6.8G   0% /run/user/0
+[1:0:0:0]    cd/dvd  QEMU     QEMU DVD-ROM     2.5+  /dev/sr0        -
+[2:0:0:0]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sda    128GB
+[2:0:0:2]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdb   10.7GB
+[2:0:0:3]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdd    268GB
+[2:0:0:4]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdc    268GB
+----172.23.226.133----
+Filesystem                   Type      Size  Used Avail Use% Mounted on
+/dev/mapper/vg00-rootvol     xfs       5.4G  2.3G  3.1G  43% /
+devtmpfs                     devtmpfs   51G     0   51G   0% /dev
+tmpfs                        tmpfs      51G     0   51G   0% /dev/shm
+tmpfs                        tmpfs      51G   35M   51G   1% /run
+tmpfs                        tmpfs      51G     0   51G   0% /sys/fs/cgroup
+/dev/sda2                    xfs       1.1G  164M  900M  16% /boot
+/dev/mapper/vgoradata2-lvol0 ext4      360G   14G  328G   4% /oradata2
+/dev/mapper/vgoradata3-lvol0 ext4      360G   72M  341G   1% /oradata3
+/dev/mapper/vg00-varvol      xfs        20G  7.5G   12G  39% /var
+/dev/mapper/vgoradata4-lvol0 ext4      360G   72M  341G   1% /oradata4
+/dev/mapper/vg00-auditvol    xfs        11G  101M   11G   1% /var/log/audit
+/dev/mapper/vg00-homevol     xfs       8.6G  593M  8.0G   7% /home
+/dev/mapper/vg00-tmpvol      xfs       8.6G   37M  8.6G   1% /tmp
+/dev/mapper/datavg-oracle    ext4       21G   14G  6.7G  67% /oracle
+/dev/mapper/vgoradata1-lvol0 ext4      360G   34G  308G  10% /oradata1
+tmpfs                        tmpfs      11G     0   11G   0% /run/user/6008
+tmpfs                        tmpfs      11G     0   11G   0% /run/user/0
+[1:0:0:0]    cd/dvd  QEMU     QEMU DVD-ROM     2.5+  /dev/sr0        -
+[2:0:0:0]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sda    128GB
+[2:0:0:2]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdf   21.4GB
+[2:0:0:3]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdc    375GB
+[2:0:0:4]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdd    375GB
+[2:0:0:5]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdb    375GB
+[2:0:0:6]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sde    375GB
+----172.23.226.71----
+Filesystem                     Type      Size  Used Avail Use% Mounted on
+/dev/mapper/vg00-rootvol       xfs       5.4G  2.8G  2.6G  52% /
+devtmpfs                       devtmpfs   26G     0   26G   0% /dev
+tmpfs                          tmpfs      26G     0   26G   0% /dev/shm
+tmpfs                          tmpfs      26G  102M   26G   1% /run
+tmpfs                          tmpfs      26G     0   26G   0% /sys/fs/cgroup
+/dev/sda2                      xfs       1.1G  164M  900M  16% /boot
+/dev/mapper/vgoradata1-finj2e  ext4      158G  6.5G  143G   5% /finj2e
+/dev/mapper/vg00-homevol       xfs        54G  3.5G   51G   7% /home
+/dev/mapper/datavg-oracle      ext4       11G  4.7G  4.8G  50% /oracle
+/dev/mapper/vg00-varvol        xfs        20G  1.8G   18G  10% /var
+/dev/mapper/vgoradata2-finacle ext4      158G   14G  136G  10% /finacle
+/dev/mapper/vg00-auditvol      xfs        11G   81M   11G   1% /var/log/audit
+/dev/mapper/vg00-tmpvol        xfs        11G   37M   11G   1% /tmp
+/dev/mapper/vgoradata2-web1    ext4      1.1G  2.7M  964M   1% /web1
+/dev/mapper/vgoradata1-logs    ext4      1.1G  2.7M  964M   1% /logs
+tmpfs                          tmpfs     5.1G     0  5.1G   0% /run/user/6006
+tmpfs                          tmpfs     5.1G     0  5.1G   0% /run/user/6007
+tmpfs                          tmpfs     5.1G     0  5.1G   0% /run/user/0
+[1:0:0:0]    cd/dvd  QEMU     QEMU DVD-ROM     2.5+  /dev/sr0        -
+[2:0:0:0]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sda    128GB
+[2:0:0:2]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdb   10.7GB
+[2:0:0:3]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdd    161GB
+[2:0:0:4]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdc    161GB
+----172.23.226.82----
+Filesystem                     Type      Size  Used Avail Use% Mounted on
+/dev/mapper/vg00-rootvol       xfs       5.4G  1.7G  3.8G  31% /
+devtmpfs                       devtmpfs   51G     0   51G   0% /dev
+tmpfs                          tmpfs      51G     0   51G   0% /dev/shm
+tmpfs                          tmpfs      51G   93M   51G   1% /run
+tmpfs                          tmpfs      51G     0   51G   0% /sys/fs/cgroup
+/dev/sda2                      xfs       1.1G  164M  900M  16% /boot
+/dev/mapper/vg00-varvol        xfs        20G  1.6G   18G   9% /var
+/dev/mapper/vg00-homevol       xfs       8.6G   41M  8.6G   1% /home
+/dev/mapper/vgoradata2-finwork ext4      264G   63M  250G   1% /finwork
+/dev/mapper/vg00-auditvol      xfs        11G   76M   11G   1% /var/log/audit
+/dev/mapper/vg00-tmpvol        xfs       8.6G   36M  8.6G   1% /tmp
+/dev/mapper/vgoradata1-finapp  ext4      264G   63M  250G   1% /finapp
+/dev/mapper/datavg-oracle      ext4       11G  2.4G  7.2G  25% /oracle
+tmpfs                          tmpfs      11G     0   11G   0% /run/user/0
+[1:0:0:0]    cd/dvd  QEMU     QEMU DVD-ROM     2.5+  /dev/sr0        -
+[2:0:0:0]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sda    128GB
+[2:0:0:2]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdd    268GB
+[2:0:0:3]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdc    268GB
+[2:0:0:4]    disk    QEMU     QEMU HARDDISK    2.5+  /dev/sdb   10.7GB
