@@ -1,3 +1,17 @@
+
+swapoff
+   13  swapoff /dev/mapper/vg00-swapvol
+   14  lvextend -L 16G /dev/mapper/vg00-swapvol
+   15  swapon /dev/mapper/vg00-swapvol
+   
+   mkswap /dev/mapper/vg00-swapvol
+   18  swapoff /dev/mapper/vg00-swapvol
+   19  mkswap /dev/mapper/vg00-swapvol
+   20  lvextend -L 16G /dev/mapper/vg00-swapvol -r
+   21  lvs
+   22  mkswap /dev/mapper/vg00-swapvol 
+   23  swapon /dev/mapper/vg00-swapvol 
+
 systemctl enable tmp.mount
 
 cd /etc/systemd/system/local-fs.target.wants
