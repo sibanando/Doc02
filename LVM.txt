@@ -1,0 +1,60 @@
+systemctl enable tmp.mount
+
+cd /etc/systemd/system/local-fs.target.wants
+
+Options=mode=1777,strictatime,noexec,nodev,nosuid
+
+acno31776467223
+Ashok Pradhan
+SBIN0008940
+
+
+ # multipath -ll
+ # pvcreate /dev/mapper/mpatha /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathb /dev/mapper/mpathe
+ # vgcreate datavg01 /dev/mapper/mpatha /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathb /dev/mapper/mpathe
+ # vgs
+ # lvcreate -l 100%FREE -n "data01" datavg01
+ # mkfs.xfs /dev/mapper/datavg01-data01
+ # vi /etc/fstab
+ # mkdir /data01
+ # mount -a
+ # vi /etc/fstab
+ # mount -a
+ # df -lh
+ # mount
+ # clear
+ # df -lh
+ # history
+
+
+mkdir /data01
+
+/dev/mapper/datavg01-data01 /data01              xfs     defaults        0 0
+
+mount /dev/mapper/datavg01-data01 /data01
+
+
+yum install sysfutils
+
+systool -c fc_host -v
+
+systool -c fc_host -v | grep port_name(find wwns for hba ports)
+systool -c fc_host -v | grep port_state
+
+cat /sys/class/fc_host/host0/node_name
+
+cat /sys/class/scsi_host/host0/node_name
+
+echo"1"> /sys/class/fc_host/host0/issue_lip
+echo "- - -" > /sys/class/scsi_host/host0/scan
+
+yum install sg3_utils
+rescan-scsi-bus.sh
+
+fdisk -l
+mount -a
+df -HT
+ntpdate -q IPNTP001
+grep MemTotal /proc/meminfo
+lscpu
+
