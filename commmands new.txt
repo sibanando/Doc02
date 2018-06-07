@@ -1,0 +1,508 @@
+1  rpm -qa | egrep -i  glibc-devel
+    2  rpm -qa | egrep -i  libaio
+    3  rpm -qa | egrep -i  libstdc++
+    4  rpm -qa | egrep -i  libXtst.i686
+    5  rpm -qa | egrep -i  libXtst
+    6  rpm -qa | grep -i glibc-devel.i686 2.17
+    7  rpm -qa | grep -i glibc-devel
+    8  rpm -qa | grep -i libaio.i686 0.3.109
+    9  rpm -qa | grep -i libaio
+   10  rpm -qa | grep -i libstdc++-devel
+   11  rpm -qa | grep -i libXi
+   12  rpm -qa | grep -i libXtst
+   13  rpm -qa | grep -i rpm-build.x86_64
+   14  rpm -qa | grep -i rpm-build
+   15  rpm -qa glibc-devel
+   16  ls
+   17  pwd
+   18  cd /root/
+   19  ls
+   20  cd
+   21  rpm -qa libaio
+   22  rpm -qa libaio-devel
+   23  rpm -qa libstdc++-devel
+   24  rpm -qa libXi
+   25  rpm -qa libXtst
+   26  rpm -a rpm-build
+   27  rpm -qa rpm-build
+   28  rpm -qa glibc-devel
+   29  df -h
+   30  grep -c ^processor /proc/cpuinfo
+   31  getconf -a | grep PAGES | awk 'BEGIN {total = 1} {if (NR == 1 || NR == 3) total *=$NF} END {print total / 1024/1024 / 1024" GB"}'
+   32  fdisk -l | grep Disk
+   33  df -h
+   34  history
+   35   rpm -qa | grep -i libXi
+   36  yum install libXi.i686 1.7.2
+   37   rpm -qa | grep -i
+   38  yum install libXtst.i686 1.2.2
+   39  ls -l
+   40  pwd
+   41  ls
+   42  ./OS-Hard-1.1.sh
+   43  vi OS-Hard-1.1.sh
+   44  systemctl unmask tmp.mount
+   45  vi OS-Hard-1.1.sh
+   46  systemctl enable tmp.mount
+   47  ./OS-Hard-1.1.sh
+   48  cd /var/log/SHr/
+   49  ls
+   50  vi 20180316.log
+   51  cd /var/lib/aide/
+   52  ls
+   53  ls -l
+   54  vi /etc/systemd/system/local-fs.target.wants/tmp.mount
+   55  cd /etc/modprobe.d/
+   56  cat CIS.conf
+   57  vi CIS.conf
+   58   mount -o remount,nodev /tmp
+   59   mount -o remount,nosuid /tmp
+   60   mount -o remount,noexec /tmp
+   61  df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d \( -perm -0002 -a ! -perm -1000 \) 2>/dev/null | xargs chmod a+t
+   62  crontab -u root -e
+   63  cd /boot/grub2/
+   64  ls
+   65  cd /
+   66  whereis grub.cfg
+   67  grub2-mkpasswd-pbkdf2
+   68  vi /etc/grub.d/01_users
+   69   grub2-mkconfig > /boot/grub2/grub.cfg
+   70  cd /boot/grub2/
+   71  ls
+   72  ls -l
+   73   chmod og-rwx /boot/grub2/grub.cfg
+   74  ls -l
+   75  vi /usr/lib/systemd/system/rescue.service
+   76  vi /usr/lib/systemd/system/emergency.service
+   77  NOW=$(date +"%Y-%m-%d")
+   78  cp /etc/motd /etc/motd_$NOW
+   79  cp /etc/issue /etc/issue_$NOW
+   80  cp /etc/issue.net /etc/issue.net_$NOW
+   81  echo "Authorized uses only. All activity may be monitored and reported." > /etc/motd
+   82  echo "Authorized uses only. All activity may be monitored and reported." > /etc/issue
+   83  echo "Authorized uses only. All activity may be monitored and reported." > /etc/issue.net
+   84  chown root:root /etc/motd
+   85  chmod 644 /etc/motd
+   86  chown root:root /etc/issue
+   87  chmod 644 /etc/issue
+   88  chown root:root /etc/issue.net
+   89  chmod 644 /etc/issue
+   90  cd /
+   91  chkconfig chargen-dgram off
+   92  chkconfig chargen-stream off
+   93  chkconfig daytime-dgram off
+   94  chkconfig daytime-stream off
+   95  chkconfig discard-dgram off
+   96  chkconfig discard-stream off
+   97  chkconfig echo-dgram off
+   98  chkconfig echo-stream off
+   99  chkconfig time-dgram off
+  100  chkconfig time-stream off
+  101  chkconfig tftp off
+  102  rpm -qa | grep -i ntp
+  103  echo "restrict -4 default kod nomodify notrap nopeer noquery
+  104  restrict -6 default kod nomodify notrap nopeer noquery" /etc/ntp.conf
+  105  vi /etc/ntp.conf
+  106  rpm -qa | grep -i telnet
+  107  rpm -qa | grep -i rsh
+  108  rpm -qa | grep -i rsh-server
+  109  rpm -qa | grep -i ypbind
+  110  rpm -qa | grep -i tftp
+  111  rpm -qa | grep -i tftp-server
+  112  rpm -qa | grep -i talk
+  113  systemctl disable tftp.socket
+  114  rpm -qa | grep -i tcp
+  115  ls -l /etc/hosts*
+  116  echo "-w /etc/selinux/ -p wa -k MAC-policy
+  117  -w /var/log/lastlog -p wa -k logins
+  118  -w /var/run/faillock/ -p wa -k logins >>  /etc/audit/audit.rules
+  119  echo "-w /etc/selinux/ -p wa -k MAC-policy
+  120  -w /var/log/lastlog -p wa -k logins
+  121  -w /var/run/faillock/ -p wa -k logins" >>  /etc/audit/audit.rules
+  122  cat  /etc/audit/audit.rules
+  123  q!
+  124  chkconfig --list crond
+  125  systemctl list-unit-files | grep -i crond
+  126  ls -l /etc/cron*
+  127  ls -l
+  128  cd /etc
+  129  ls
+  130  ls -l
+  131  ls -l cron.deny
+  132  ls -l at.deny
+  133  ls -l cron.allow
+  134  ls -l at.allow
+  135  ls -l /etc/ssh/sshd_config
+  136  vi /etc/ssh/sshd_config
+  137  vi /etc/login.defs
+  138  chkconfig atd off
+  139  chkconfig autofs off
+  140  chkconfig avahi-daemon off
+  141  chkconfig bluetooth off
+  142  chkconfig cups off
+  143  chkconfig iptables off
+  144  chkconfig ip6tables off
+  145  chkconfig irqbalance off
+  146  chkconfig mdmonitor off
+  147  systemctl disable irqbalance.service
+  148  systemctl disable iptables.service
+  149  systemctl disable ip6tables.service
+  150  systemctl disable atd.service
+  151  systemctl disable cups
+  152  systemctl disable cups.service
+  153  chmod 620 /var/log/messages
+  154  chmod 620 /var/log/wtmp
+  155  chmod 622 /var/log/xferlog
+  156  chmod 620 /var/log/cron
+  157  chmod 622 /var/log/lastlog
+  158  chmod -s /sbin/nologin sync
+  159  chmod -s /sbin/nologin shutdown
+  160  chmod -s /sbin/nologin halt
+  161  df -Th
+  162  exit
+  163  df lh
+  164  df -lh
+  165  ssh IPDCA002
+  166  df -lh
+  167  pvs
+  168  exit
+  169  multipath -ll
+  170  df -lh
+  171  pvs
+  172  multipath -ll
+  173  pvs
+  174  multipath -ll
+  175  exit
+  176  df -lh
+  177  pvs
+  178  lsscsi -l
+  179  vgdisplay
+  180  multipath -ll
+  181  fdisk
+  182  fdisk -l
+  183  echo "- - -" > /sys/class/scsi_host/host0/scan
+  184  echo "- - -" > /sys/class/scsi_host/host1/scan
+  185  echo "- - -" > /sys/class/scsi_host/host2/scan
+  186  echo "- - -" > /sys/class/scsi_host/host3/scan
+  187  echo "- - -" > /sys/class/scsi_host/host4/scan
+  188  echo "- - -" > /sys/class/scsi_host/host5/scan
+  189  fdisk -l
+  190  pvs
+  191  rescan-scsi-bus.sh
+  192  multipath -ll
+  193  vgs
+  194  rescan-scsi-bus.sh
+  195  multipath
+  196  multipath -ll
+  197  pvcreate /dev/mapper/mpathl
+  198  vgcreate "softvg" /dev/mapper/mpathl
+  199  lvcreate -l 100%FREE -n "software" softvg
+  200  mkdir /software
+  201  mkfs.ext4 /dev/mapper/softvg-software
+  202  vi /etc/fstab
+  203  mount -a
+  204  df -lh
+  205  multipath -ll
+  206  rescan-scsi-bus.sh
+  207  multipath -ll
+  208  fdisk -s
+  209  fdisk -l
+  210  df -lh
+  211  umount /var/opt/opsware/word
+  212  lvremove /dev/mapper/datavg7-word
+  213  vgremove datavg7
+  214  pvs
+  215  rescan-scsi-bus.sh -r
+  216  pvs
+  217  rescan-scsi-bus.sh
+  218  rescan-scsi-bus.sh -r
+  219  rescan-scsi-bus.sh
+  220  multipath -ll
+  221  rescan-scsi-bus.sh
+  222  multipath -ll
+  223  cat /etc/fstab
+  224  multipath -ll
+  225  rescan-scsi-bus.sh
+  226  multipath -ll
+  227  pvcreate /dev/mapper/mpathm
+  228  vgcreate datavg7 mpathm
+  229  vgcreate datavg7 /dev/mapper/mpath/mpathm
+  230  vgcreate datavg7 /dev/mapper/mpathm
+  231  lvcreate -l 100%FREE -n "word" datavg7
+  232  mkfs.xfs /dev/mapper/datavg7-word
+  233  mount -a
+  234  df -lh
+  235  multipath -ll
+  236  pvs
+  237  df -lh
+  238  umount /var/opt/opsware/ogfs/export/store
+  239  lvremove /dev/mapper/vg00alt-store
+  240  vgremove vg00alt
+  241  vgs
+  242  vgcreate /dev/mapper/vg00alt
+  243  pvs
+  244  vgcreate vg00alt /dev/sda3
+  245  vgs
+  246  rescan-scsi-bus.sh -r
+  247  rescan-scsi-bus.sh
+  248  multipath -ll
+  249  pvcreate mpathn
+  250  pvcreate /dev/mapper/mpathmpathn
+  251  pvcreate /dev/mapper/mpathn
+  252  vgcreate datavg8 /dev/mapper/mpathn
+  253  lvcreate -l 100%FREE -n store datavg8
+  254  mkfs.xfs /dev/mapper/datavg8-store
+  255  vi /etc/fstab
+  256  mount -a
+  257  df -lh
+  258  ls
+  259  df -h
+  260  cd /var/opt/opsware/word
+  261  ls
+  262  cd /var/opt/opsware/ogfs/export/store
+  263  ls
+  264  cd /var/log/
+  265  ls
+  266  cd opsware/
+  267  ls
+  268  ll
+  269  cd hpe_sa_installer/
+  270  ls
+  271  cp Software_SA_Product_Software_10.60_Part_1_T8900-15068-01.setup /software/hpe_sa_installer/.
+  272  ll
+  273  cp Software_SA_Product_Software_10.60_Part_2_T8900-15068-02.tgz /software/hpe_sa_installer/.
+  274  cp Software_SA_Product_Software_10.60_Part_3_T8900-15068-03.tgz Software_SA_Product_Software_10.60_Part_4_T8900-15068-04.tgz Software_SA_Product_Software_10.60_Part_5_T8900-15068-05.tgz Software_SA_Product_Software_10.60_Part_6_T8900-15068-06.tgz Software_SA_Product_Software_10.60_Part_7_T8900-15068-07.tgz Software_SA_Product_Software_10.60_Part_8_T8900-15068-08.tgz Software_SA_Product_Software_10.60_Part_9_T8900-15068-09.tgz Software_SA_Product_Software_10.60_Part_10_T8900-15068-10.tgz Software_SA_Product_Software_10.60_Part_11_T8900-15068-11.tgz /software/hpe_sa_installer/.
+  275  pwd
+  276  cd /software/
+  277  ls -lrt
+  278  cd hpe_sa_installer/
+  279  ls -lrt
+  280  pwd
+  281  cd ..
+  282  ls -lrt
+  283  chmod -R 777 hpe_sa_installer
+  284  ls -lrt
+  285  cd hpe_sa_installer/
+  286  ls -lrt
+  287  pwd
+  288  df -h
+  289  cd /tmp/
+  290  ls
+  291  cd /var/log/
+  292  ls
+  293  cd opsware/
+  294  ls
+  295  cd hpe_sa_installer/
+  296  ls
+  297  rm -rf T8900-15068
+  298  rm -rf T8900-15068.tgz
+  299  cd ..
+  300  ls | wc
+  301  ls
+  302  cd hpe_sa_installer/
+  303  ls
+  304  ls | wc
+  305  cd /software/hpe_sa_installer/
+  306  ls | wc
+  307  ls
+  308  cd -
+  309  cd ..
+  310  ls
+  311  pwd
+  312  ll
+  313  rm -rf hpe_sa_installer/
+  314  df -h
+  315  mount -a
+  316  vi vi /etc/sysconfig/nfs
+  317  vi /etc/sysconfig/nfs
+  318  vi /etc/sysconfig/nfs
+  319  vi /etc/sysconfig/selinux
+  320  init 6
+  321  find / -name Software_SA_Product_Software_10.60_Part_1_T8900-15068-01.setup
+  322  cd /software/
+  323  ls
+  324  du -sh
+  325  df -h
+  326  pwd
+  327  ls
+  328  mkdir hpe_sa_installer
+  329  ls -lrt
+  330  cd hpe_sa_installer/
+  331  pwd
+  332  ls -lrt
+  333  du -sh
+  334  ls -lrt
+  335  pwd
+  336  ls -lrt
+  337  ./Software_SA_Product_Software_10.60_Part_1_T8900-15068-01.setup
+  338  ls -lrt
+  339  cd T8900-15068/T8900-15068-primary/disk001/opsware_installer/prereq/
+  340  pwd
+  341  cd
+  342  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/opsware_installer/prereq
+  343  ls
+  344  ./preinstall_requisites.sh
+  345  ./preinstall_requisites.sh core_inst
+  346  service atd status
+  347  systemctl enable rpcbind.socket
+  348  systemctl restart rpcbind.service
+  349  mount -a
+  350  systemctl start rpc-statd.service
+  351  systemctl status rpc-statd.service
+  352  service nfs-lock status
+  353  timedatectl
+  354  timedatectl set-timezone 'Asia/Kolkata'
+  355  timedatectl set-timezone 'UTC'
+  356  timedatectl
+  357  service nfs-lock status
+  358  service nfs status
+  359  service nfs start
+  360  service nfs status
+  361  service nfs statusservice nfs status
+  362  service nfs status
+  363  service nfs start
+  364  service nfs status
+  365  systemctl enable nfs-server
+  366  pwd
+  367  pwd
+  368  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/
+  369  ls
+  370  cd opsware_installer/prereq/
+  371  ls
+  372  ./preinstall_requisites.sh core_inst
+  373  pwd
+  374  cd /
+  375  pwd
+  376  ls
+  377  yum install nfs
+  378  yum repolist
+  379  yum install nfs-server
+  380  rpm -qa | grep -i nfs
+  381  cat /etc/yum.repos.d/
+  382  cat /etc/yum.repos.d/ippb.repo
+  383  service atd status
+  384  service atd start
+  385  service atd status
+  386  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/
+  387  ls
+  388  cd opsware_installer/prereq/
+  389  ls
+  390  ./preinstall_requisites.sh
+  391  ./preinstall_requisites.sh core_inst
+  392  systemctl enable nfs-server
+  393  ./preinstall_requisites.sh core_inst
+  394  service at status
+  395  service atd status
+  396  service atd stop
+  397  service atd status
+  398  service atd start
+  399  service atd status
+  400  ./preinstall_requisites.sh core_inst
+  401  service atd stop
+  402  service atd status
+  403  ./preinstall_requisites.sh core_inst
+  404  service atd start
+  405  service atd status
+  406  ./preinstall_requisites.sh core_inst
+  407  yum install nfs
+  408  rpm -qa at
+  409  service atd status
+  410  cd /etc/init.d/
+  411  ls
+  412  rpm -qa | grep nfs
+  413  cd /etc/init.d/
+  414  ls
+  415  ll
+  416  chkconfig nfs
+  417  service nfs-lock status
+  418  service nfs-lock stop
+  419  service nfs-lock status
+  420  service nfs-lock start
+  421  service nfs status
+  422  service nfs stop
+  423  service nfs status
+  424  service nfs start
+  425  service nfs status
+  426  chkconfig nfs
+  427  chkconfig nfs status
+  428  chkconfig nfs off
+  429  chkconfig nfs
+  430  chkconfig atd
+  431  chkconfig atd on
+  432  chkconfig atd
+  433  rpm -qa nfs
+  434  rpm -qa | grep nfs
+  435  vi /etc/sysconfig/nfs
+  436  service nfs-lock status
+  437  service nfs-lock start
+  438  service nfs status
+  439  service nfs stop
+  440  service nfs status
+  441  service nfs start
+  442  service nfs status
+  443  vi /etc/sysconfig/nfs
+  444  vi /etc/sysconfig/nfs
+  445  vi /etc/sysconfig/selinux
+  446  init 6
+  447  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/
+  448  ls
+  449  cd opsware_installer/prereq/
+  450  ./preinstall_requisites.sh core_inst
+  451  ./preinstall_requisites.sh core_inst
+  452  ./preinstall_requisites.sh core_inst
+  453  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/
+  454  ls
+  455  cd opsware_installer/
+  456  ls
+  457  cd prereq/
+  458  ls
+  459  ./preinstall_requisites.sh core_inst
+  460  ./preinstall_requisites.sh core_inst
+  461  ./preinstall_requisites.sh core_inst
+  462  ./preinstall_requisites.sh core_inst
+  463  service nfs status
+  464  service nfs start
+  465  service nfs status
+  466  systemctl enable nfs-server
+  467  vi /etc/sysconfig/nfs
+  468  service nfs status
+  469  service nfs stop
+  470  service nfs start
+  471  service nfs status
+  472  vi /etc/sysconfig/nfs
+  473  init 6
+  474  service nfs status
+  475  systemctl enable nfs-server
+  476  vi /etc/sysconfig/nfs
+  477  vi /etc/sysconfig/nfs
+  478  service nfs-lock status
+  479  service nfs-lock status
+  480  service nfs-lock restart
+  481  service nfs-lock status
+  482  service nfs status
+  483  service nfs restart
+  484  service nfs status
+  485  vi /etc/sysconfig/nfs
+  486  service nfs-lock restart
+  487  service nfs restart
+  488  vi /etc/sysconfig/nfs
+  489  cd /software/hpe_sa_installer/T8900-15068/T8900-15068-primary/disk001/
+  490  ls
+  491  cd opsware_installer/prereq/
+  492  ./preinstall_requisites.sh core_inst
+  493  ./preinstall_requisites.sh core_inst
+  494  ./preinstall_requisites.sh core_inst
+  495  ./preinstall_requisites.sh core_inst
+  496  ./preinstall_requisites.sh core_inst
+  497  ./preinstall_requisites.sh core_inst
+  498  ./preinstall_requisites.sh core_inst
+  499  history
+  500  fdisk -l
+  501  df -TH /
+  502  mount
+  503  df - TH /var/opt/opsware/word
+  504  df -TH /var/opt/opsware/word
+  505  df -HT /var/opt/opsware/ogfs/export/store
+  506  df -HT /software
+  507  history
+[root@IPDCA001 ~]#

@@ -1,0 +1,819 @@
+root
+    2  gohelion
+    3  clear
+    4  df lh
+    5  df =lh
+    6  df -lh
+    7  lvresize /dev/mapper/rhvh-var -L 18G
+    8  lvresize /dev/mapper/rhvh-tmp -L 8.1G
+    9  lvresize /dev/mapper/rhvh-home -L 8.1G
+   10  lvresize /dev/mapper/rhvh-var_log_audit -L 10.2G
+   11  resize2fs /dev/mapper/rhvh-var
+   12  resize2fs /dev/mapper/rhvh-tmp
+   13  resize2fs /dev/mapper/rhvh-home
+   14  resize2fs /dev/mapper/rhvh-var
+   15  resize2fs /dev/mapper/rhvh-var_log_audit
+   16  vi /etc/security/limits.conf
+   17  vi /etc/security/limits.d/20-nproc.conf
+   18  vi /etc/resolv.conf
+   19  vi /etc/hosts
+   20  cat /etc/hosts
+   21  swapoff /dev/mapper/rhvh-swap
+   22  lvresize /dev/mapper/rhvh-swap -L 16G
+   23  mkswap /dev/mapper/rhvh-swap
+   24  swapon a
+   25  swapon -a
+   26  swapon -v
+   27  hostnamectl set-hostname IPRHV301
+   28  hostnamectl set-hostname IPRHV301.ippb.in
+   29  hostname
+   30  exit
+   31  lssc
+   32  lsscsi
+   33  mkdir /mnt/usb
+   34  mount /dev/sdct /mnt/usb
+   35  ls
+   36  cd /mnt/usb
+   37  ls
+   38  cd c007-09/
+   39  ls
+   40  cd /etc/sysconfig/network-scripts/
+   41  ls
+   42  cp ifcfg-eno* /root/
+   43  cp ifcfg-ens1f* /root
+   44  cd /mnt/usb/
+   45  cd c007-09/
+   46  ls
+   47  cp ifcfg-bond* ifcfg-eno* ifcfg-ens1f* /etc/sysconfig/network-scripts/
+   48  cd /etc/sysconfig/network-scripts/
+   49  vi ifcfg-bond0
+   50  vi ifcfg-bond1
+   51  vi ifcfg-bond2
+   52  vi ifcfg-bond3
+   53  service NetworkManager stop
+   54  service firewalld stop
+   55  service iptables stop
+   56  systemctl disable iptables
+   57  systemctl disable firewalld
+   58  systemctl disable NetworkManager
+   59  ip a
+   60  service network restart
+   61  journalctl -xe
+   62  ip a
+   63  vi ifcfg-eno50
+   64  ls
+   65  vi ifcfg-eno50
+   66  ls -l
+   67  ls
+   68  cat ifcfg-eno49
+   69  cat ifcfg-eno50
+   70  cat ifcfg-eno54
+   71  cat ifcfg-eno55
+   72  cat ifcfg-eno53
+   73  cat ifcfg-ens1f0
+   74  cat ifcfg-ens1f1
+   75  cat ifcfg-ens1f2
+   76  cat ifcfg-ens1f4
+   77  cat ifcfg-ens1f5
+   78  ls /mnt/usb/c007-09/*
+   79  cat /mnt/usb/c007-09/ifcfg-en053
+   80  ping 172.23.226.22
+   81  exit
+   82  cd /etc/sysconfig/network-scripts/
+   83  ls
+   84  vi ifcfg-eno53
+   85  vi ifcfg-eno50
+   86  service network restart
+   87  vi /etc/hosts
+   88  df -lh
+   89  umount /mnt/usb
+   90  cd /
+   91  cd /etc/sysconfig/network-scripts/
+   92  ls
+   93  cat ifcfg-eno49
+   94  cat ifcfg-eno50
+   95  cat ifcfg-eno53
+   96  cat ifcfg-eno54
+   97  cat ifcfg-ens1f0
+   98  cat ifcfg-ens1f1
+   99  cat ifcfg-ens1f4
+  100  cat ifcfg-ens1f5
+  101  cat ifcfg-bond0
+  102  hostname
+  103  cat ifcfg-bond0
+  104  cat ifcfg-bond1
+  105  cat ifcfg-bond2
+  106  cat ifcfg-bond3
+  107  cat /etc/hosts
+  108  vi /etc/hosts
+  109  cd /
+  110  exity
+  111  exit
+  112  ip r l
+  113  cd /etc/sysconfig/network-scripts/
+  114  ping 172.23.226.1
+  115  vi ifcfg-bond2
+  116  vi /etc/hosts
+  117  service network restart
+  118  ip r l
+  119  grep -i GATEWAY ifcfg-*
+  120  vi ifcfg-bond0
+  121  service network restart
+  122  ip r l
+  123  service firewalld status
+  124  service iptables status
+  125  service NetworkManager status
+  126  systemctl disable firewalld
+  127  systemctl disable iptables
+  128  systemctl disable NetworkManager
+  129  cd  cd /etc/udev/rules.d/
+  130   cd /etc/udev/rules.d/
+  131  rm -rf 70-persistent-ipoib.rules
+  132  init 6
+  133  ip r l
+  134  cd /etc/sysconfig/network-scripts/
+  135  grep -i gateway ifcfg-*
+  136  vi ifcfg-bond2
+  137  service network restart
+  138  vi /etc/hosts
+  139  ip -a
+  140  ip a
+  141  ping 192.168.125.26
+  142  ping 172.23.225.26
+  143  ping 192.168.125.1
+  144  hosted-engine --vm-status
+  145  hosted-engine
+  146  hosted-engine --console
+  147  hosted-engine --vm-status
+  148  hosted-engine --console
+  149  hosted-engine --resume
+  150  hosted-engine --resume |grep -i resume
+  151  vmstatus
+  152  hosted-engine status
+  153  hosted-engine --status
+  154  hosted-engine --vm-shutdown
+  155  hosted-engine --vm-status
+  156  df
+  157  ping
+  158  vm-start
+  159  bdf /var/log
+  160  bdf
+  161  df
+  162  service vdsmd restartservice vdsmd restartservice vdsmd restart
+  163  service vdsmd restart
+  164  service vdsmd status
+  165  hosted-engine --vm-status
+  166  hosted-engine --vm-start
+  167  hosted-engine --vm-start-forece
+  168  hosted-engine --console
+  169  cd /var/log
+  170  ls
+  171  cd vdsm
+  172  ls
+  173  tail -f vdsm.log
+  174  hosted-engine --vm-status
+  175  hosted-engine --vm-poweroff
+  176  hosted-engine --vm-start
+  177  hosted-engine --vm-status
+  178  service ovirt-ha-broker stop
+  179  service ovirt-ha-broker start
+  180  hosted-engine --vm-status
+  181  vsmd
+  182  vsdm
+  183  shutdown -r -y 0
+  184  shutdown 0 now
+  185  hosted-engine --vm-status
+  186  hosted-engine --vm-start
+  187  hosted-engine --vm-status
+  188  exit
+  189  sosreport
+  190  df -th
+  191  df
+  192  ip a
+  193  /sbin/ifconfig
+  194  ip a
+  195  ifconfig
+  196  ip a
+  197  /sbin/ifconfig
+  198  cd /etc/networks
+  199  nmcli -p dev
+  200  service Networkmanager start
+  201  exit
+  202  df
+  203  df -h
+  204  df
+  205  df -h
+  206  ovirt-log-collector
+  207  cd /tmp
+  208  sftp 172.23.226.201
+  209  yum install ovirt-log-collector-
+  210  yum install ovirt-log-collector-4.1.6-1.el7ev.noarch.rpm
+  211  sftp 172.23.226.201
+  212  yum install ovirt-log-collector-4.1.6-1.el7ev.noarch.rpm
+  213  yum install ovirt-engine-lib-4.1.7.6-0.1.el7.noarch.rpm
+  214  yum install ovirt-log-collector-4.1.6-1.el7ev.noarch.rpm
+  215  pwd
+  216  ls
+  217  scp -rp ovirt-engine-lib-4.1.7.6-0.1.el7.noarch.rpm  iprhv303:/tmp/.
+  218  scp -rp ovirt-log*  iprhv303:/tmp/.
+  219  ovirt-log-collector
+  220  pwd
+  221  ll
+  222  scp -rp sosreport-LogCollector-20171117072104.tar.xz 172.23.226.201:/tmp/                                                                                        .
+  223  exit
+  224  ovirt-log-collector --no-hypervisors
+  225  date
+  226  ipconfig
+  227  ip
+  228  ip -f
+  229  ip route
+  230  exit
+  231  ip a
+  232  cd /etc/sysconfig/network
+  233  ls
+  234  pwd
+  235  cat ifcfg-eno49
+  236  cat ifcfg-eno50
+  237  yum update
+  238  yum repolist all
+  239  pwd
+  240  ls
+  241  exit
+  242  df
+  243  pvs
+  244  df -lh
+  245  exit
+  246  df -lh
+  247  swapon -a
+  248  swapon -v
+  249  exit
+  250  ip a
+  251  cat /etc/hosts
+  252  cd /var
+  253  ls
+  254  cd /root
+  255  ls
+  256  cd openscap_data/
+  257  ls
+  258  cd ..
+  259  ls
+  260  cd /var
+  261  ls
+  262  df
+  263  cd /
+  264  ls
+  265  cd /run
+  266  ls
+  267  cd mdadm/
+  268  ls
+  269  cd ..
+  270  cd /
+  271  ls
+  272  cd rhev/
+  273  ls
+  274  cd data-center/
+  275  ls
+  276  cd 5a06c13f-01ed-034c-00ce-000000000264/
+  277  ls
+  278  ls -l
+  279  cd /
+  280  ls
+  281  ls -l
+  282  pwd
+  283  ls
+  284  cat /etc/hosts
+  285  ssh 172.23.226.26
+  286  exit
+  287  df -Th
+  288  pwd
+  289  engine-backup --mode=backup --file=RHEV-NonProd-Backup --logfile=RHEV-Non                                                                                        Prod-Backup.log
+  290  df -lh
+  291  cat /etc/host
+  292  cat /etc/hosts
+  293  cat /etc/resolv.conf
+  294  cat /etc/security/limits.conf
+  295  cat /etc/security/limits.d/20-nproc.conf
+  296  swapon -v
+  297  cd /etc/sysconfig/network
+  298  cd /etc/sysconfig/network-scripts/
+  299  ls
+  300  clear
+  301  cat ifcfg-bond0
+  302  cat ifcfg-Prod_VLAN121
+  303  ls
+  304  cat ifcfg-eno49
+  305  cat ifcfg-eno50
+  306  cat ifcfg-bond1
+  307  cat ifcfg-eno53
+  308  cat ifcfg-eno54
+  309  cat ifcfg-bond2
+  310  cat ifcfg-ens1f0
+  311  cat ifcfg-ens1f1
+  312  cat /etc/fstab
+  313  exit
+  314  hosted-engine --vm-status
+  315  cat /etc/hosts
+  316  ssh iprshe301.ippb.in
+  317  hosted-engine --vm-status
+  318  hosted-engine --vm-shutdown
+  319  hosted-engine --vm-status
+  320  ssh iprshe301.ippb.in
+  321  hosted-engine --vm-status
+  322  ping iprshe301.ippb.in
+  323  hosted-engine --vm-status
+  324  cat /etc/hosts
+  325  ssh 172.23.226.22
+  326  ssh 172.23.226.23
+  327  ssh 172.23.226.26
+  328  cat /etc/hosts
+  329  ssh 172.23.226.27
+  330  ssh 172.23.226.46
+  331  ssh 172.23.226.47
+  332  halt -p
+  333  df -th
+  334  df-th
+  335  df -TH
+  336  df -h
+  337  pvs
+  338  clear
+  339  ls
+  340  ip a
+  341  ping iprshe301.ippb.in
+  342  cd /etc/sysconfig/network
+  343  cd /etc/sysconfig/network-scripts/
+  344  ls
+  345  cat ifcfg-ovirtmgmt
+  346  cat ifcfg-ens1f0
+  347  cat ifcfg-ens1f1
+  348  cat ifcfg-ovirtmgmt
+  349  cat ifcfg-bond2
+  350  cat ifcfg-bond0
+  351  hosted-engine --vm-status
+  352  service ovirt-engine-ha-agent status
+  353  service ovirt-engine-ha-agent start
+  354  service ovirt-ha-agent start
+  355  service ovirt-ha-agent status
+  356  hosted-engine --vm-status
+  357  hosted-engine --vm-start
+  358  cat /etc/hosts
+  359  vi /etc/hosts
+  360  cat /etc/hosts
+  361  ssh 172.23.226.23
+  362  ssh iprhv302
+  363  cat /etc/sysconfig/network-scripts/
+  364  ssh iprhv302
+  365  ssh iprhv306
+  366  ssh iprhv303
+  367  exit
+  368  cd /var
+  369  ls
+  370  ls linux-x64/
+  371  cd /home/oracle/oeda/newoeda/linux-x64
+  372  ls
+  373  cd linux-x64/
+  374  ls
+  375  cd ExadataConfigurations_new_dc_231117_v1/
+  376  ls
+  377  cd E
+  378  cd ExadataConfigurations_new_dc_231117/
+  379  ls
+  380  cd ..
+  381  cd.
+  382  cd..
+  383  cd ..
+  384  ./ India_Post-dwp1-checkip.sh
+  385  sh India_Post-dwp1-checkip.sh
+  386  ls
+  387  cd ExadataConfigurations_new_dc_231117_v1/
+  388  ls
+  389  cd ExadataConfigurations_new_dc_231117/
+  390  sh India_Post-dwp1-checkip.sh
+  391  ls
+  392  sh India_Post-dwp1-checkip.sh
+  393  ls
+  394  cd /home/oracle/oeda/newoeda/linux-x64
+  395  pwd
+  396  cd /home/oracle/oeda/newoeda/linux-x64
+  397  pwd
+  398  ls -ltr
+  399  pwd
+  400  cd ..
+  401  ls -ltr
+  402  cd ..
+  403  ls -ltr
+  404  pwd
+  405  cd ExadataConfigurations_new_dc_231117_v1
+  406  l -ltr
+  407  ls -ltr
+  408  cd *
+  409  ls -ltr
+  410  cp -pr India_Post-dwp1-checkip.sh ../../.
+  411  cp India_Post-dwp1.xml ../../.
+  412  cd ../../
+  413  ls -ltr
+  414  sh India_Post-dwp1-checkip.sh
+  415  xclock
+  416  pwd
+  417  ls -ltr
+  418  pwd
+  419  more India_Post-dwp1-checkip.sh
+  420  pwd
+  421  more India_Post-dwp1.xml
+  422  pwd
+  423  ls -ltr
+  424  more India_Post-dwp1-checkip.sh
+  425  whereis java
+  426  java -c
+  427  java -version
+  428  whereis java
+  429  xclock
+  430  whereis xclock
+  431  pwd
+  432  ls -ltr
+  433  sh config.sh
+  434  id
+  435  more config.sh
+  436  ch
+  437  pwd
+  438  ls -ltr
+  439  chmod -R 777 jre1.8.0_152
+  440  sh config.sh
+  441  ip a
+  442  exit
+  443  pwd
+  444  cat /etc/passwd
+  445  pwd
+  446  cd /var
+  447  ls -ltr
+  448  xclock
+  449  cat /etc/ovirt-hosted-engine/hosted-engine.conf
+  450  exit
+  451  fdisk /dev/sdb
+  452  logout
+  453  hosted-engine --vm-status
+  454  cat /etc/hosts
+  455  ssh iprshe301.ippb.in
+  456  df -lh
+  457  df
+  458  service nfs status
+  459  exit
+  460  df -lh
+  461  df
+  462  cat /etc/exports
+  463  exit
+  464  ssh 172.23.226.24
+  465  exit
+  466  df -lh
+  467  df
+  468  hosted-engine --vm-status
+  469  exit
+  470  ping 172.23.226.24
+  471  cd /var/run/ovirt-hosted-engine-ha/
+  472  ls
+  473  cat /etc/hosts
+  474  ssh iprhv304.ippb.in
+  475  ssh iprhv303.ippb.in
+  476  ls
+  477  cd /etc/sysconfig/network-scripts/
+  478  ls
+  479  cat route-ovirtmgmt
+  480  exit
+  481  cd /etc/sysconfig/network-scripts/
+  482  ls
+  483  vi route-ovirtmgmt
+  484  cat route-ovirtmgmt
+  485  ip route add 172.23.226.0/24 via 172.23.226.21 dev ovirtmgmt
+  486  ip route add 172.23.226.0/24 via 172.23.226.1 dev ovirtmgmt
+  487  ip route
+  488  vi route-ovirtmgmt
+  489  ip route add 172.23.251.0/24 via 172.23.226.1 dev ovirtmgmt
+  490  ip route
+  491  clear
+  492  ls
+  493  cat route-ovirtmgmt
+  494  ip route
+  495  exit
+  496  ping 172.23.226.245
+  497  ip r l
+  498  exit
+  499  ip r l
+  500  exit
+  501  ip r l
+  502  ping 172.23.225.1
+  503  ping 172.23.230.35
+  504  ping 172.23.230.1
+  505  ip r l
+  506  ping 172.23.230.57
+  507  exit
+  508  /proc/meminfo
+  509  free
+  510  top
+  511  vmstat
+  512  dmidecode
+  513  cat /proc/meminfo
+  514  free -g
+  515  exit
+  516  ssh 172.23.226.98
+  517  ntpdate -q
+  518  ntpdate -q 172.23.224.100
+  519  date
+  520  npdate -u 172.23.224.100
+  521  ntpdate -u 172.23.224.100
+  522  exit
+  523  date
+  524  cat /etc/resolv.conf
+  525  vi /etc/resolv.conf
+  526  service NetworkManager stop
+  527  service firewalld stop
+  528  service iptables stop
+  529  systemctl disable NetworkManager
+  530  systemctl disable firewalld
+  531  systemctl disable iptables
+  532  service network restart
+  533  vi /etc/ntp.conf
+  534  date
+  535  ntpdate -u 172.23.224.100
+  536  vi /etc/ntp.conf
+  537  cd /etc/init.d/
+  538  ls
+  539  cd /etc/init.d/functions
+  540  ls
+  541  cd /etc/init.d/rhnsd
+  542  cd
+  543  cd -
+  544  find . -name dbora
+  545  find . -name db
+  546  ssh 172.23.226.24
+  547  exit
+  548  ssh 172.23.226.24
+  549  ssh 172.23.226.71
+  550  ssh 172.23.226.24
+  551  hostname -i
+  552  vi /etc/hosts
+  553  hostname -i
+  554  ssh 172.23.226.24
+  555  ssh 172.23.226.24
+  556  ssh 172.23.226.91
+  557  ping 192.168.124.22
+  558  cd /etc/sysconfig/network-scripts/
+  559  ls
+  560  vi ifcfg-bond1
+  561  vi route-BUR_VLAN122
+  562  rm route-eth1
+  563  service network start
+  564  ping 192.168.124.22
+  565  vi route-BUR_VLAN122
+  566  service network start
+  567  ping 192.168.124.22
+  568  vi route-bond1
+  569  service network restart
+  570  ping 192.168.124.22
+  571  ip a
+  572  clear
+  573  vi route-bond1
+  574  ip a
+  575  vi route-BUR_VLAN122
+  576  service network start
+  577  ping 192.168.124.22
+  578  ping 192.168.124.1
+  579  ping 192.168.124.23
+  580  exit
+  581  cd /etc/sysconfig/network-scripts/
+  582  vi route-BUR_VLAN122
+  583  service network start
+  584  ping 192.168.124.23
+  585  ping 192.168.124.1
+  586  vi route-BUR_VLAN122
+  587  service network start
+  588  ping 192.168.124.1
+  589  ping 192.168.124.23
+  590  exit
+  591  ssh 172.23.226.24
+  592  hosted-engine --vm-status
+  593  hosted-engine --help
+  594  hosted-engine --cosle
+  595  hosted-engine --vm-cosle
+  596  hosted-engine --vm-status
+  597  hosted-engine --vm-shutdown
+  598  hosted-engine --vm-start
+  599  hosted-engine --vm-status
+  600  exit
+  601  cat /etc/hosts
+  602  ssh 172.23.226.22
+  603  ssh 172.23.226.23
+  604  exit
+  605  ssh 172.23.226.24
+  606  hosted-engine --vm-status
+  607  exit
+  608  ssh 172.23.226.24
+  609  ping 172.23.225.1
+  610  ssh root@172.23.225.108
+  611  yum install telnet xinetd
+  612  ntpq -p
+  613  date
+  614  cat /etc/hosts
+  615  ssh 172.23.226.100
+  616  ssh 172.23.226.24
+  617  cd /var/log/
+  618  ls
+  619  ip a
+  620  cd
+  621  cd /root/
+  622  mkdir /Script
+  623  cd /Script/
+  624  cd
+  625  ls
+  626  cd /var/log/
+  627  ls
+  628  mkdir Script
+  629  ls
+  630  cd Script/
+  631  pwd
+  632  ssh 172.23.226.24
+  633  ssh 172.23.226.24
+  634  ssh 172.23.226.21
+  635  ssh 172.23.225.104
+  636  ssh 172.23.224.100
+  637  history
+  638  history > commandtext
+  639  ls
+  640  cat sec-useradd.sh
+  641  ssh 172.23.226.24
+  642  cat /etc/hosts
+  643  ssh 172.23.226.24
+  644  ovirt-log-collector --no-hypervisors
+  645  cat /etc/hosts
+  646  sosreport
+  647  ssh 172.23.226.24
+  648  vi /etc/vdsm/vdsm.conf
+  649  systemctl restart vdsmd.service
+  650  exit
+  651  ssh 172.23.226.24
+  652  ssh 172.23.243.57
+  653  cat .ssh/authorized_keys
+  654  ssh 172.23.226.134
+  655  ssh 172.23.226.26
+  656  ssh 192.168.126.121
+  657  ssh 172.23.226.116
+  658  pwd
+  659  ls -l /home/secadm/
+  660  mv /home/secadm/TMAgent/ /opt/
+  661  cd /opt/
+  662  cd TMAgent/
+  663  cd Agent-RedHat_EL7-9.6.2-8248.x86_64/
+  664  rpm -ivh Agent-Core-RedHat_EL7-9.6.2-8248.x86_64.rpm
+  665  hostname
+  666  exit
+  667  rpm -qa | grep -i OB2
+  668  cd /etc/sysconfig/network-scripts/
+  669  ls
+  670  cat ifcfg-BUR_VLAN122
+  671  cat ifcfg-Prod_VLAN121
+  672  ls
+  673  cat ifcfg-ovirtmgmt
+  674  ls
+  675  cat ifcfg-onf88b87af348d4
+  676  exit
+  677  cat /etc/hosts
+  678  ssh 172.23.226.46
+  679  cat /etc/hosts
+  680  ssh 172.23.226.47
+  681  cat /etc/hosts
+  682  ssh 172.23.226.23
+  683  exit
+  684  cd /var/log/ovirt-engine/
+  685  ls
+  686  cd ovirt-log-collector/
+  687  ls
+  688  exit
+  689  vi /etc/ssh/ssh_host_rsa_key
+  690  exit
+  691  hosted-engine --vm-status
+  692  exit
+  693  last
+  694  vi .ssh/authorized_keys
+  695  cat /etc/hosts
+  696  history
+  697  ip a
+  698  ping 172.23.226.1
+  699  hosted-engine --vm-status
+  700  uname -r
+  701  hosted-engine --vm-status
+  702  ls -l /etc/init.d/ovirt-firstboot
+  703  ldf -Th
+  704  df -Th
+  705  ps -ef |gerp -i df
+  706  ps -ef |grep -i df
+  707  ps -ef |grep -i "df -"
+  708  mounts
+  709  mount
+  710  cd /boot
+  711  ls
+  712  ls -ltra
+  713  cd grub2
+  714  ls
+  715  ls -l
+  716  cat grub.cfg
+  717  cat grub.cfg |grep -v "^#"
+  718  cat grub.cfg |grep -v "^#" |more
+  719  vi grub.cfg
+  720  pwd
+  721  cd ../efi/
+  722  ls
+  723  cd EFI/
+  724  ls
+  725  cd BOOT/
+  726  ls
+  727  more BOOTX64.EFI
+  728  cd ..
+  729  cat redhat/
+  730  cd redhat/
+  731  ls
+  732  more grub.cfg
+  733  ls
+  734  cd /var/tmp
+  735  ls
+  736  ls -tlra
+  737  uptime
+  738  last |motre
+  739  last |more
+  740  cd /var/log
+  741  ls -tlra
+  742  cd vdsm/
+  743  ls
+  744  ls -ltra
+  745  vi vdsm.log
+  746  sosreport
+  747  :q!
+  748  tail -f /var/log/messages
+  749  cd /etc/security/limits.conf
+  750  vi /etc/security/limits.conf
+  751  vi /etc/security/limits.d/20-nproc.conf
+  752  vi /etc/security/limits.d/99-vdsm.conf
+  753  tail -f /var/log/messages
+  754  init 6
+  755  cd /var/log
+  756  ls -tlra
+  757  date
+  758  vi message
+  759  vi messages
+  760  tail -f /var/log/messages
+  761  df -Th
+  762  uptime
+  763  date
+  764  tail -f /var/log/messages
+  765  vgs
+  766  cd /etc/security/limits.conf
+  767  vi 99
+  768  ll
+  769  cd /etc/security/limits.d
+  770  vi 99-vdsm.conf
+  771  ps -ef | grep -i  clone
+  772  ps -ef | grep -i  vm
+  773  cd /var
+  774  ls
+  775  cd log
+  776  ls
+  777  vi messages
+  778  cd /
+  779  vdsClient -s 0 getAllTasks
+  780  exit
+  781  service ovirt-engine restart
+  782  systemctl restart ovirt-engine restart
+  783  systemctl restart ovirt-engine
+  784  service ovirt-engine status
+  785  ssh 172.23.226.23
+  786  vi /root/.ssh/known_hosts
+  787  ssh 172.23.226.23
+  788  vi /root/.ssh/known_hosts
+  789  ssh 172.23.226.23
+  790  exit
+  791  cat /etc/hosts
+  792  ssh 172.23.226.22
+  793  hosted-engine --vm-status
+  794  ssh iprhv301.ippb.in
+  795  ssh iprhv302
+  796  cat /etc/hosts
+  797  ntpq -p
+  798  ntpdate -u 172.23.224.100
+  799  ntpq -p
+  800  ps -ef |grep chrony
+  801  ls
+  802  cd ..
+  803  ls
+  804  cd rhev/
+  805  ls
+  806  cd ..
+  807  ls
+  808  cat /etc/rsyslog.conf | grep -i @172.23.224
+  809  vi /etc/rsyslog.conf
+  810  service rsyslog restart
+  811  ip r l | grep -i 172.23.224
+  812  ip r l
+  813  cd /etc/sysconfig/network-scripts/
+  814  ls
+  815  vi route-ovirtmgmt
+  816  ip route add 172.23.224.169  via 172.23.226.1 dev ovirtmgmt
+  817  ip r l
+  818  history
+[root@iprhv301 ~]#

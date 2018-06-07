@@ -1,0 +1,506 @@
+ lsscsi
+    2  rescan-scsi-bus.sh
+    3  lsscsi
+    4  ls
+    5  cd /etc/sysconfig/network-scripts/
+    6  ls
+    7  vi ifcfg-bond2
+    8  cp ifcfg-ens1f0 /root/
+    9  cp ifcfg-ens1f1 /root/
+   10  vi ifcfg-ens1f0
+   11  vi ifcfg-ens1f1
+   12  service NetworkManager stop
+   13  service firewalld stop
+   14  service iptables stop
+   15  systemctl disable Network-Manager
+   16  systemctl disable NetworkManager
+   17  systemctl disable firewalld
+   18  systemctl disable iptables
+   19  service network restart
+   20  hostnamectl set-hostname IPRHV004.ippb.in
+   21  vi /etc/hosts
+   22  cat /etc/hosts
+   23  ping 172.23.230.24
+   24  ping 172.23.230.1
+   25  cat ifcfg-bond2
+   26  ip a
+   27  exit
+   28  cd /etc/sysconfig/network-scripts/
+   29  ls
+   30  ip a
+   31  cp ifcfg-bond2 ifcfg-bond0
+   32  vi ifcfg-ens1f0 ifcfg-eno49
+   33  cp ifcfg-ens1f0 ifcfg-eno49
+   34  cp ifcfg-ens1f0 ifcfg-eno50
+   35  vi ifcfg-bond0
+   36  vi ifcfg-eno49
+   37  vi ifcfg-eno50
+   38  service NetworkManager stop
+   39  service firewalld stop
+   40  service iptables stop
+   41  service network restart
+   42  ls
+   43  cp ifcfg-bond2 ifcfg-bond1
+   44  cp ifcfg-eno49 ifcfg-eno53
+   45  cp ifcfg-eno49 ifcfg-eno54
+   46  vi ifcfg-bond1
+   47  vi ifcfg-eno53
+   48  vi ifcfg-eno54
+   49  service network restart
+   50  ls
+   51  cp ifcfg-bond2 ifcfg-bond3
+   52  cp ifcfg-ens1f0 ifcfg-ens1f4
+   53  cp ifcfg-ens1f0 ifcfg-ens1f5
+   54  vi ifcfg-bond3
+   55  vi ifcfg-ens1f4
+   56  ip a
+   57  vi ifcfg-ens1f4
+   58  vi ifcfg-ens1f5
+   59  service network restart
+   60  ls
+   61  logout
+   62  df -lh
+   63  cd /etc/sysconfig/network-scripts/
+   64  ls
+   65  cat ifcfg-bond2
+   66  ping 172.23.230.24
+   67  ping 172.23.230.1
+   68  vi ifcfg-bond0
+   69  ping 172.23.228.24
+   70  ping 172.23.228.1
+   71  vi /etc/hosts
+   72  ping 172.23.228.1
+   73  ping 172.23.230.1
+   74  ping 172.23.228.1
+   75  cat ifcfg bond3
+   76  ls
+   77  cat ifcfg-bond3
+   78  cat ifcfg-bond2
+   79  cat ifcfg-bond1
+   80  cat ifcfg-bond0
+   81  cat ifcfg-eno49
+   82  cat ifcfg-eno50
+   83  ping 172.23.228.24
+   84  ping 172.23.228.1
+   85  ping 172.23.226.241
+   86  cat ifcfg-bond0
+   87  cat ifcfg-eno49
+   88  cat ifcfg-eno50
+   89  ping 172.23.228.1
+   90  ping 172.23.226.241
+   91  cat ifcfg-bond0
+   92  cat ifcfg-eno49
+   93  cat ifcfg-eno50
+   94  ping 172.23.228.1
+   95  ping 172.23.226.241
+   96  cat ifcfg-bond1
+   97  cat ifcfg-eno53
+   98  cat ifcfg-eno54
+   99  ping 192.168.128.1
+  100  cat ifcfg-bond2
+  101  cat ifcfg-ens1f0
+  102  cat ifcfg-ens1f1
+  103  ping 172.23.230.1
+  104  ping 172.23.226.241
+  105  cat ifcfg-bond
+  106  cat ifcfg-ens1f4
+  107  cat ifcfg-ens1f5
+  108  ping 10.23.228.3
+  109  ip a
+  110  cat ifcfg-bond1
+  111  ping 172.23.228.1
+  112  ping 172.23.230.1
+  113  ping 192.168.128.1
+  114  df -lh
+  115  lvresize /dev/mapper/rhvh-home -L 8.1G
+  116  lvresize /dev/mapper/rhvh-tmp -L 8.1G
+  117  lvresize /dev/mapper/rhvh-var -L 18.G
+  118  lvresize /dev/mapper/rhvh-var_log_audit -L 10.1G
+  119  resize2fs /dev/mapper/rhvh-var
+  120  resize2fs /dev/mapper/rhvh-var_log_audit
+  121  resize2fs /dev/mapper/rhvh-home
+  122  resize2fs /dev/mapper/rhvh-tmp
+  123  swapoff /dev/mapper/rhvh-swap
+  124  lvresize /dev/mapper/rhvh-swap -L 16G
+  125  mkswap /dev/mapper/rhvh-swap
+  126  swapon -a
+  127  swapon -v
+  128  vi /etc/security/limits.conf
+  129  vi /etc/resolv.conf
+  130  cat /etc/system-release-cpe
+  131  ping 172.23.228.1
+  132  ping 172.23.230.1
+  133  ip a
+  134  cat /etc/security/limits.conf
+  135  cat /etc/security/limits.d/20-nproc.conf
+  136  cat /etc/resolv.conf
+  137  df -lh
+  138  swapon -a
+  139  swapon -v
+  140  exit
+  141  ip a
+  142  cd /etc/sysconfig/network-scripts/
+  143  ls
+  144  vi ifcfg-bond1
+  145  vi ifcfg-eno53
+  146  vi ifcfg-eno54
+  147  ip a
+  148  ping 172.23.228.1
+  149  ping 172.23.230.1
+  150  clear
+  151  exit
+  152  cd /etc/sysconfig/network-scripts/
+  153  ls
+  154  cat ifcfg-bond2
+  155  cat ifcfg-ens1f0
+  156  exit
+  157  ping 172.23.230.26
+  158  ping 172.23.230.1
+  159  ping 172.23.230.26
+  160  ping 172.23.228.1
+  161  ping 172.23.230.26
+  162  vi /etc/hosts
+  163  vi /etc/selinux/config
+  164  cd /etc/udev
+  165  ls
+  166  cd rules.d/
+  167  ls
+  168  rm *.*
+  169  cd /
+  170  vi /etc/security/limits.conf
+  171  vi /etc/security/limits.d/20-nproc.conf
+  172  service NetworkManager stop
+  173  service firewalld stop
+  174  service iptables stop
+  175  systemctl disable NetworkManager
+  176  systemctl disable firewalld
+  177  systemctl disable iptables
+  178  cat /etc/sysconfig/network-scripts/
+  179  cd /etc/sysconfig/network-scripts/
+  180  ls -l
+  181  ls
+  182  ping 172.23.230.24
+  183  ping 172.23.230.1
+  184  ping 172.23.230.26
+  185  cd /etc/sysconfig/network-scripts/
+  186  ls
+  187  cat ifcfg-bond2
+  188  cat ifcfg-ens1f0
+  189  172.23.230.28
+  190  ssh 172.23.230.28
+  191  exit
+  192  ping 172.23.230.26
+  193  ip a
+  194  ping 172.23.230.1
+  195  ping 172.23.230.26
+  196  ping 172.23.230.28
+  197  cd /etc/sysconfig/network
+  198  cd /etc/sysconfig/network-scripts/
+  199  ls
+  200  vi ifcfg-bond
+  201  vi ifcfg-bond0
+  202  vi ifcfg-bond1
+  203  vi ifcfg-bond2
+  204  vi ifcfg-bond3
+  205  vi ifcfg-eno49
+  206  vi ifcfg-eno50
+  207  vi ifcfg-eno53
+  208  vi ifcfg-eno54
+  209  vi ifcfg-ens1f0
+  210  vi ifcfg-ens1f1
+  211  vi ifcfg-ens1f4
+  212  vi ifcfg-ens1f5
+  213  shutdown
+  214  ping 192.168.128.1
+  215  cd /etc/sysconfig/network-scripts/
+  216  ls
+  217  cat ifcfg-bond1
+  218  ip a
+  219  cat ifcfg-bond1
+  220  cat ifcfg-eno53
+  221  vi ifcfg-eno53
+  222  vi ifcfg-eno54
+  223  service network restart
+  224  ping 192.168.128.1
+  225  exit
+  226  cd /etc/sysconfig/network-scripts/
+  227  ls
+  228  cat ifcfg-bond2
+  229  vi ifcfg-bond0
+  230  vi ifcfg-bond1
+  231  vi ifcfg-bond2
+  232  vi ifcfg-bond3
+  233  vi ifcfg-eno49
+  234  vi ifcfg-eno50
+  235  vi ifcfg-eno53
+  236  vi ifcfg-eno54
+  237  vi ifcfg-ens1f0
+  238  vi ifcfg-ens1f1
+  239  vi ifcfg-ens1f4
+  240  vi ifcfg-ens1f5
+  241  service netwrok restart
+  242  service network restart
+  243  ping 172.23.230.1
+  244  ping 172.23.228.1
+  245  ping 192.168.128.1
+  246  vi ifcfg-bond1
+  247  vi ifcfg-eno53
+  248  vi ifcfg-eno54
+  249  ip a
+  250  exit
+  251  ip a
+  252  cd /etc/sysconfig/network-
+  253  cd /etc/sysconfig/network-scripts/
+  254  ls
+  255  cat ifcfg-eno53
+  256  wq!
+  257  cat ifcfg-eno54
+  258  exit
+  259  yum install ovirt-hosted-engine-setup
+  260  hosted-engine --deploy
+  261  hosted-engine --vm-statua
+  262  hosted-engine --vm-status
+  263  hosted-engine --vm-start
+  264  hosted-engine --vm-deploy
+  265  hosted-engine --vm-deploye
+  266  exit
+  267  yum update "ovirt-engine-setup*"
+  268  yum update -y
+  269  vi /var/log/ovirt-hosted-engine-ha/agent.log
+  270  vi /etc/hosts
+  271  service network restart
+  272  exit
+  273  vi /var/log/ovirt-hosted-engine-ha/agent.log
+  274  cat /etc/hosts
+  275  lsscsi
+  276  lsscsi -s
+  277  cat /hosts
+  278  cat /etc/hosts
+  279  vi /etc/hosts
+  280  cat /etc/hosts
+  281  vi /etc/selinux/config
+  282  service selinux status
+  283  vi /etc/selinux/config
+  284  exit
+  285  lsscsi -s
+  286  pvs
+  287  ping 172.23.230.79
+  288  ip a |grep -i "94:3f:c2:0b:09:27"
+  289  ip a |grep -i 27
+  290  exit
+  291  ls
+  292  cd /etc/
+  293  ls
+  294  cd ovirt-hosted-engine
+  295  ls
+  296  ls -l
+  297  vi hosted-engine.conf
+  298  cat hosted-engine.conf
+  299  cat /etc/ovirt-hosted-engine/hosted-engine.conf
+  300  ssh iprhv005
+  301  cat /etc/ovirt-hosted-engine/hosted-engine.conf
+  302  pvs
+  303  cd /etc/ovirt-hosted-engine/
+  304  ls
+  305  ls -l
+  306  cat virsh_auth.conf
+  307  ls -l
+  308  cd /
+  309  systemctl status ovirt-ha-agent
+  310  systemctl status ovirt-ha-broker
+  311  systemctl stop ovirt-ha-agent
+  312  systemctl stop ovirt-ha-broker
+  313  cd /etc/ovirt-hosted-engine
+  314  ls -l
+  315  ls
+  316  ls -l
+  317  mv hosted-engine.conf /root/hosted-engine.conf.org
+  318  hosted-engine --help
+  319  hosted-engine --undeploy
+  320  hosted-engine --check-deployed
+  321  hosted-engine --vm-status
+  322  hosted-engine --check-deployed
+  323  ls -l
+  324  cat hosted-engine.conf
+  325  ls -l
+  326  cd /var/log/
+  327  ls
+  328  cd ovirt-hosted-engine-setup
+  329  ls
+  330  cd ..
+  331  cd ovirt-engine
+  332  hosted-engine --vm-status
+  333  hosted-engine --help
+  334  hosted-engine --check-deployed
+  335  ls -l
+  336  cd ovirt-hosted-engine-setup
+  337  ls
+  338  ls -l
+  339  date
+  340  vi ovirt-hosted-engine-setup-20171204195208-b366gj.log
+  341  cd /etc/ovirt-hosted-engine
+  342  ls
+  343  cp hosted-engine.conf hosted-engine.conf.org
+  344  vi hosted-engine.conf
+  345  systemctl status ovirt-ha-agent
+  346  systemctl stop ovirt-ha-agent
+  347  systemctl stop ovirt-ha-broker
+  348  systemctl start ovirt-ha-agent
+  349  systemctl start ovirt-ha-broker
+  350  systemctl status ovirt-ha-agent
+  351  systemctl status ovirt-ha-broker
+  352  hosted-engine --vm-status
+  353  exit
+  354  cd /etc/ovirt-engine
+  355  cd /etc/ovirt-hosted-engine/
+  356  pwd
+  357  ls -l
+  358  vi hosted-engine.conf.org
+  359  ls
+  360  ls -l
+  361  vi hosted-engine.conf
+  362  hosted-engine --vm-status
+  363  history
+  364  pvs | grep -i 62e4a37d-e823-4f7e-a753-4080daf4e22e
+  365  pvs
+  366  history
+  367  ls -l
+  368  cd /var/run/ovirt-hosted-engine-ha/
+  369  ls -l
+  370  cat vm.conf
+  371  ls -l
+  372  scp vm.conf iprhv001:/root/vm.conf.iprhv004
+  373  exit
+  374  cd /var/run/ovirt-hosted-engine-ha
+  375  ls
+  376  exit
+  377  cd /etc/sysconfig/network-scripts/
+  378  ls
+  379  vi route-bond2
+  380  ssh 172.23.243.29
+  381  ip a | more
+  382  cd /etc/sysconfig/network-scripts/
+  383  ls
+  384  vi ifcfg-Prod_VLAN141
+  385  vi ifcfg-Mgmt_VLAN143
+  386  service network restart
+  387  ip a
+  388  ping 172.23.236.1
+  389  ping 172.23.234.1
+  390  ping 172.23.241.41
+  391  ssh 172.23.241.41
+  392  service NetworkManager status
+  393  service NetworkManager stop
+  394  service firewalld stop
+  395  service iptables stop
+  396  systemctl disable NetworkManager
+  397  systemctl disable firewalld
+  398  systemctl disable iptables
+  399  service network restart
+  400  service NetworkManager stop
+  401  service firewalld stop
+  402  service iptables stop
+  403  systemctl disable NetworkManager
+  404  systemctl disable firewalld
+  405  systemctl disable iptables
+  406  service network restart
+  407  ip a
+  408  vi /etc/ntp.conf
+  409  df -lh
+  410  exit
+  411  ls
+  412  cd /etc/
+  413  ls
+  414  cd ovirt-hosted-engine
+  415  ls
+  416  cat hosted-engine.conf
+  417  cd /var
+  418  ls
+  419  cd opt
+  420  ls
+  421  cd ..
+  422  ls
+  423  cd /opt
+  424  ls
+  425  cd /var
+  426  ls
+  427  cd lo
+  428  cd log/
+  429  ls
+  430  cd vdsm/
+  431  ls
+  432  cd ..
+  433  ls
+  434  cd ovirt-hosted-engine-setup/
+  435  ls
+  436  cd ../ovirt-hosted-engine-ha/
+  437  ls
+  438  ls -l
+  439  cd ..
+  440  exit
+  441  vi /etc/hosts'
+  442  vi /etc/hosts
+  443  ls
+  444  hosted-engine --vm-status
+  445  hosted-engine --console
+  446  vi /etc/hosts
+  447  exit
+  448  vi /etc/vdsm/vdsm.conf
+  449  systemctl restart vdsmd.service
+  450  cd /etc/sysconfig/network-scripts/
+  451  ls
+  452  cat ifcfg-BUR_VLAN132
+  453  cat ifcfg-Prod_VLAN131
+  454  ls
+  455  cat ifcfg-on5901569667a64
+  456  cat ifcfg-ovirtmgmt
+  457  ssh iprhv006
+  458  cat hostname
+  459  cd /
+  460  cat /etc/hostname
+  461  vi /etc/hostname
+  462  uname -r
+  463  cd /etc/sysconfig/network-scripts/
+  464  ls
+  465  cat ifcfg-BUR_VLAN132
+  466  vi route-BUR_VLAN132
+  467  ip route add 192.168.124.0/24 via 192.168.128.1 dev BUR_VLAN132
+  468   rpm -qa | grep -i ob2
+  469  rpm -qa | grep -i xinetd
+  470  rpm -qa | grep -i telnet
+  471  ls
+  472  rpm -ivh xinetd-2.3.15-13.el7.x86_64.rpm
+  473  service xinetd stop
+  474  service xinetd start
+  475  service xinetd status
+  476  telnet 192.168.128.24
+  477  service xinetd status
+  478  service xinetd start
+  479  service firewalld stop
+  480  ping ipbkpdp001.ippb.in
+  481  ping ipbkp001-bkp.ippb.in
+  482  ping ipbkp002-bkp.ippb.in
+  483  rpm -qa | grep -i ob2
+  484  rpm -qa | grep -i telnet
+  485  rpm -qa | grep -i xinetd
+  486  service xinetd status
+  487  telnet 192.168.124.22 5555
+  488  nslookup 192.168.124.22
+  489  rpm -qa | grep -i ob2
+  490  cat /etc/rsyslog.conf | grep -i @172.23.224
+  491  vi /etc/rsyslog.conf
+  492  ip r l | grep -i 172.23.224
+  493  service rsyslog restart
+  494  ip r l
+  495  service rsyslog restart
+  496  ip r l | grep -i 172.23.224
+  497  cd /etc/sysconfig/network-scripts/
+  498  ls
+  499  vi route-ovirtmgmt
+  500  ip route add 172.23.224.169 via 172.23.230.1 dev ovirtmgmt
+  501  ip r l
+  502  ip r l | grep -i 172.23.224
+  503  ip r l | grep 172.23.224
+  504  ip a
+  505  history
+[root@iprhv004 ~]#
