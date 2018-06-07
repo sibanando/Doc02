@@ -1,0 +1,139 @@
+systemctl enable tmp.mount
+
+cd /etc/systemd/system/local-fs.target.wants
+
+Options=mode=1777,strictatime,noexec,nodev,nosuid
+
+
+ # multipath -ll
+ # pvcreate /dev/mapper/mpatha /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathb /dev/mapper/mpathe
+ # vgcreate datavg01 /dev/mapper/mpatha /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathb /dev/mapper/mpathe
+ # vgs
+ # lvcreate -l 100%FREE -n "data01" datavg01
+ # mkfs.xfs /dev/mapper/datavg01-data01
+ # vi /etc/fstab
+ # mkdir /data01
+ # mount -a
+ # vi /etc/fstab
+ # mount -a
+ # df -lh
+ # mount
+ # clear
+ # df -lh
+ # history
+
+/dev/vg-finj2e/finj2e
+
+
+mkdir /data01
+
+/dev/mapper/datavg01-data01 /data01              xfs     defaults        0 0
+
+mount /dev/mapper/datavg01-data01 /data01
+
+
+yum install sysfutils
+
+systool -c fc_host -v
+
+systool -c fc_host -v | grep port_name(find wwns for hba ports)
+systool -c fc_host -v | grep port_state
+
+cat /sys/class/fc_host/host0/node_name
+
+cat /sys/class/scsi_host/host0/node_name
+
+echo"1"> /sys/class/fc_host/host0/issue_lip
+echo "- - -" > /sys/class/scsi_host/host0/scan
+
+yum install sg3_utils
+rescan-scsi-bus.sh
+
+fdisk -l
+mount -a
+df -HT
+ntpdate -q IPNTP001
+grep MemTotal /proc/meminfo
+lscpu
+
+umount /dev/mapper/datavg-app01
+lvrename /dev/datavg/app01 /dev/datavg/web01
+rmdir /app01
+mkdir /web01
+vi /etc/fstab
+mount -a
+df -lh
+
+
+
+------------------
+vgcreate vg0finj2e /dev/sdb
+  806  lvcreate -l 100%FREE -n "finj2e" vg0finj2e
+  807  lvdisplay
+  808  mkfs.ext4 /dev/mapper/vg0finj2e-finj2e
+  809  vi /etc/fstab
+  810  mount -a
+  811  cd /
+  812  ll
+  813  mkdir finj2e
+  814  mount -a
+  815  df -HT
+  816  lsblk
+  817  vi /etc/fstab
+  818  lvremove  /dev/mapper/vg0finj2e-finj2e
+  819  mount -a
+  820  umount /dev/mapper/vg0finj2e-finj2e
+  821  umount /dev/mapper/vg0finj2e-finj2e /finj2e
+  822  mount -a
+  823  lvremove  /dev/mapper/vg0finj2e-finj2e
+  824  vgremove vg0finj2e
+  825  pvdisplay
+  826  lsblk
+  827  vgcreate vg0oracle /dev/sdb
+  828  lvcreate -l 100%FREE -n "lv0oracle" vg0oracle
+  829  mkfs.ext4 /dev/mapper/vg0oracle-lv0oracle
+  830  vi /etc/fstab
+  831  mount -a
+  832  df -HT
+  833  lsblk
+  834  pvcreate /dev/sdc
+  835  vi /etc/fstab
+  836  mount -a
+  837  mkdir oracle
+  838  mount -a
+  839  df -HT
+  840  rm -rf /finj2e/
+  841  reboot
+  842  df -HT
+  843  rm -rf /finj2e/
+  844  lsblk
+  845  pvcreate /dev/sdc
+  846  vgcreate vg0finj2e /dev/sdc
+  847  lvcreate -l 100%FREE -n "lv0finj2e" vg0finj2e
+  848  mkfs.ext4 /dev/mapper/vg0finj2e-lv0finj2e
+  849  lsblk
+  850  vi /etc/fstab
+  851  mount -a
+  852  mkdir /finj2e
+  853  mount -a
+  854  df -HT
+  855  lsblk
+  856  pvcreate /dev/sdd
+  857  vgcreate vg0finacle /dev/sdd
+  858  lvcreate -l 100%FREE -n "lv0finacle" vg0finacle
+  859  mkfs.ext4 /dev/mapper/vg0finacle-lv0finacle
+  860  vi /etc/fstab
+  861  mount -a
+  862  mkdir /finacle
+  863  mount -a
+  864  df -HT
+  865  cat /etc/fstab
+  866  /dev/mapper/vg0oracle-lv0oracle /oracle         ext4     defaults       0 0
+  867  /dev/mapper/vg0finj2e-lv0finj2e  /finj2e        ext4     defaults       0 0
+  868  /dev/mapper/vg0finacle-lv0finacle /finacle      ext4     defaults       0
+
+/dev/mapper/vg0oracle-lv0oracle /oracle         ext4     defaults       0 0
+
+/dev/mapper/vg0finj2e-lv0finj2e  /finj2e        ext4     defaults       0 0
+/dev/mapper/vg0finacle-lv0finacle /finacle      ext4     defaults       0 0
+
