@@ -1,4 +1,16 @@
 
+
+useradd –u 6001-g 1001 -c " UNIX Build Team member – Ramkumar G (DXC)” -m dxc_ram
+   53  useradd –u 6002 -g 1001 -c " UNIX Build Team member – Satish P (DXC)” -m dxc_sati
+   54  useradd –u 6003 –g 1001 –c " UNIX Build Team member – Prakash S (DXC)” -m dxc_par
+   55  useradd –u 6004 –g 1001 -c " UNIX Build Team member – Faiyaz (DXC)" -m dxc_faiy
+   56  useradd –u 6001 -g 1001 -c " UNIX Build Team member – Ramkumar G (DXC)” -m dxc_ramk
+   57  useradd –u 6002 -g 1001 -c " UNIX Build Team member – Satish P (DXC)” -m dxc_sati
+   58  useradd –u 6003 –g 1001 –c " UNIX Build Team member – Prakash S (DXC)” -m dxc_park
+   59  useradd –u 6004 –g 1001 -c " UNIX Build Team member – Maheshu (DXC)" -m dxc_mahe
+   60  useradd –u 6001 -g 1001 -c " UNIX Build Team member – Ramkumar G (DXC)” -m dxc_ramk
+   61  useradd –u 6001 -g 1001 -c " UNIX Build Team member – Ramkumar G (DXC)" -m dxc_ramk
+   62  useradd –u 6001 -g 1001 -c "UNIX Build Team member – Ramkumar G (DXC)" -m dxc_ramk
 swapoff
    13  swapoff /dev/mapper/vg00-swapvol
    14  lvextend -L 16G /dev/mapper/vg00-swapvol
