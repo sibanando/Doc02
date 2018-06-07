@@ -1,0 +1,76 @@
+Bond:
+
+DEVICE=bond0
+BONDING_OPTS="miimon=100 mode=active-backup"
+BONDING_MASTER=yes
+BOOTPROTO=static
+IPADDR=172.23.236.21
+NETMASK=255.255.254.0
+GATEWAY=172.23.228.1
+NAME=bond0
+ONBOOT=yes
+
+
+=============================================================================
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eno49
+DEVICE=eno49
+ONBOOT=yes
+MASTER=bond0
+SLAVE=yes
+
+=============================================================================
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eno50
+DEVICE=eno50
+ONBOOT=yes
+MASTER=bond0
+SLAVE=yes
+
+=============================================================================
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eno53
+DEVICE=eno53
+ONBOOT=yes
+MASTER=bond1
+SLAVE=yes
+
+=============================================================================
+TYPE=Ethernet
+BOOTPROTO=static
+NAME=eno54
+DEVICE=eno54
+ONBOOT=yes
+MASTER=bond1
+SLAVE=yes
+
+
+en049+eno50= bond0-prod
+eno53+eno54=bond1-Backup
+ens1f0+ens1f1=Bond2-Management
+ens1f4+ens1f5=Bond3-HB
+
+
+grub2-mkpasswd-pbkdf2 Enter password: <password> Reenter password: <password> Your PBKDF2 is <encrypted-password>
+
+Run the following command to update the grub2 configuration: # grub2-mkconfig > /boot/grub2/grub.cfg
+
+172.23.251.0/24 via 172.23.226.1 dev eth2
+
+172.23.251.0/24 via 172.23.241.1 dev eth1
+
+
+
+
+
+
+
+172.23.230.26
+
+172.23.230.25
+172.23.230.23
+
+
