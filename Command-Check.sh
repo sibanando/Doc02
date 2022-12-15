@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Author - Satish Prajapati 
-#  HP Server Support Team
+# Author - Siba
+#  Server Support Team
 # 
 counter=1
 
