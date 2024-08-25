@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# Author - Satish Prajapati
+
 #
 # Script used to get the Health Check Status in CSV format
 Path1=/var/Scripts/Logs
