@@ -1,13 +1,13 @@
 [RHEL7.4Base]
 name=Base-OS Binaries
-baseurl=ftp://172.23.226.245/pub/ResilientStorage
+baseurl=ftp://192.9.9.9/pub/ResilientStorage
 enabled=1
 gpgcheck=0
 anonymous_enable=yes
 
 [RHEL7.4HA]
 name=Base-OS Binaries
-baseurl=ftp://172.23.226.245/pub/HighAvailability
+baseurl=ftp://192.6.8.1/pub/HighAvailability
 enabled=1
 gpgcheck=0
 anonymous_enable=yes
