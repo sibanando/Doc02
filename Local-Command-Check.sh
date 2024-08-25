@@ -1,8 +1,5 @@
 #!/bin/bash
-#
-# Author - Satish Prajapati 
-#  HP Server Support Team
-# 
+
 counter=1
 
 print_status()
