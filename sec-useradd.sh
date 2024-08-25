@@ -1,13 +1,13 @@
 #!/bin/bash
 # Script to add a user to Linux system
-# Created By Satish Prajapati for FSS UNIX UserID creation 
+#  UserID creation 
 # -------------------------------------------------------------------------
 groupadd -g 2012 secadm
 if [ $(id -u) -eq 0 ]; then
 user1=secadm
-cuser1="Security Adminitrator - viveka.singh@hpe.com"
+cuser1="Security Adminitrator - abc@gmail.com"
 	username=Nothing
-        password="Welcome20!8"
+        password="Welcome"
 
 egrep "^$username" /etc/passwd >/dev/null
         if [ $? -eq 0 ]; then
