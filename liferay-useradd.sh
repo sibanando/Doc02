@@ -1,13 +1,13 @@
 #!/bin/bash
 # Script to add a user to Linux system
-# Created By Satish Prajapati for FSS UNIX UserID creation 
+#  UserID creation 
 # -------------------------------------------------------------------------
 groupadd -g 3001 liferay
 if [ $(id -u) -eq 0 ]; then
 user1=liferay
-cuser1="Bisht, Hemant <hemant.bisht@hpe.com>"
+cuser1=" Hemant <hemant@gmail.com>"
 	username=Nothing
-        password="Welcome@!23"
+        password="gmail234"
 
 egrep "^$username" /etc/passwd >/dev/null
         if [ $? -eq 0 ]; then
