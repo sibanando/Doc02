@@ -1,13 +1,13 @@
 #!/bin/bash
 # Script to add a user to Linux system
-# Created By Satish Prajapati for FSS UNIX UserID creation 
+# UserID creation 
 # -------------------------------------------------------------------------
 groupadd -g 2100 hregl
 if [ $(id -u) -eq 0 ]; then
 user1=hregladm
-cuser1="abhinawa.kishore@hpe.com - EGL PMO"
+cuser1="abc@gmzil.com - EGL PMO"
 	username=Nothing
-        password="Welcome@20!8"
+        password="qbc"
 
 egrep "^$username" /etc/passwd >/dev/null
         if [ $? -eq 0 ]; then
