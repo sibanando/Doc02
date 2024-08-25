@@ -1,8 +1,5 @@
 #!/bin/bash
-#
-# Author - Satish Prajapati
-# DXC Server Support Team
-#
+
 # Script used to check the Ping Status of the All UNIX Servers
 
 
