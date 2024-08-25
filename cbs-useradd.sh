@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script to add a user to Linux system
-# Created By Satish Prajapati for FSS UNIX UserID creation 
+# UserID creation 
 # -------------------------------------------------------------------------
 groupadd -g 2011 finadm
 if [ $(id -u) -eq 0 ]; then
