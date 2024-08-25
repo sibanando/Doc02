@@ -5,9 +5,9 @@
 groupadd -g 2011 finadm
 if [ $(id -u) -eq 0 ]; then
 user1=finadm
-cuser1="Finacle Administration Account - m.subrahmanya-sarma@hpe.com"
+cuser1="Finacle Administration Account - "
 	username=Nothing
-        password="Welcome@20!8"
+        password="abc"
 
 egrep "^$username" /etc/passwd >/dev/null
         if [ $? -eq 0 ]; then
