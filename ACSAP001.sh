@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in '172.23.236.37'
+for i in '192.1.0.1'
 do
 ssh $i cp /etc/hosts /etc/hosts.org
 ssh $i cp /etc/sysctl.conf /etc/sysctl.conf.org
